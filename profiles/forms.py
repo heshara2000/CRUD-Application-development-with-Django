@@ -7,6 +7,14 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['name', 'email', 'phone_number', 'address', 'age', 'profile_picture']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'phone_number': forms.NumberInput(attrs={'class': 'form-control'}),
+            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'age': forms.NumberInput(attrs={'class': 'form-control'}),
+            'profile_picture': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+        }
 
 
     def clean_phone_number(self):
