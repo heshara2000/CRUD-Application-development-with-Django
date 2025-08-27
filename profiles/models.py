@@ -10,7 +10,7 @@ class Profile(models.Model):
     phone_number = models.CharField(
     max_length=20,
     blank=True,
-    validators=[RegexValidator(r'^\d*$', "Phone must contain only digits")]
+    validators=[RegexValidator(r'^\d{10}$', "Phone must contain exactly 10 digits")]
     )
     address = models.TextField(blank=True)
     age = models.PositiveIntegerField(null=True, blank=True, validators=[MinValueValidator(0)])

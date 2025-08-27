@@ -14,6 +14,7 @@ class ProfileListView(ListView):
     template_name = 'profiles/profile_list.html'
     context_object_name = 'profiles'
     paginate_by = 5
+    ordering = ['id']
 
 
 class ProfileCreateView(CreateView):
